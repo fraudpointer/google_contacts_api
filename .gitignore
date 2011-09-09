@@ -41,3 +41,4 @@ Gemfile.lock
 #
 # For vim:
 #*.swp
+.rvmrc
