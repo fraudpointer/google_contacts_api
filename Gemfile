@@ -15,4 +15,5 @@ group :development do
   gem "rcov"
   gem "rspec"
   gem "rdoc"
+  gem 'ruby-debug-base'
 end

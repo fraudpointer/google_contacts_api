@@ -92,6 +92,12 @@ describe "GoogleContactsApi" do
     it "should parse results into Contacts" do
       @contact_set.to_a.first.should be_instance_of(GoogleContactsApi::Contact)
     end
+    it "should handle zero results and return empty array of results" do
+      @empty_contact_set_json = contact_set_json('empty_contact_set.json')
+      @empty_contact_set = GoogleContactsApi::ContactSet.new(@empty_contact_set_json)
+      @empty_contact_set.total_results.should == 0
+      @empty_contact_set.instance_variable_get("@#{:results}").should == []
+    end
   end
   
   describe "GroupSet" do

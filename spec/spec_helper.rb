@@ -16,8 +16,8 @@ RSpec.configure do |config|
   config.mock_framework = :rspec
 end
 
-def contact_set_json
-  f = File.open("#{File.dirname(__FILE__)}/contact_set.json")
+def contact_set_json(filename='contact_set.json')
+  f = File.open("#{File.dirname(__FILE__)}/#{filename}")
   json = f.read
   f.close
   json
